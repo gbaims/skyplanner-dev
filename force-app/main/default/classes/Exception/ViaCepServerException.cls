@@ -1,0 +1,1 @@
+public with sharing class ViaCepServerException extends Exception {}

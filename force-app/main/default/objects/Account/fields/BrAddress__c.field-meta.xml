@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BrAddress__c</fullName>
+    <externalId>false</externalId>
+    <formula>BrLogradouro__c &amp; &quot;, &quot; &amp;  TEXT(BrNumero__c) &amp; &quot;, &quot; &amp; BrComplemento__c &amp; BR() &amp; BrBairro__c &amp; &quot; - &quot; &amp; BrLocalidade__c &amp; &quot; - &quot; &amp; BrUF__c &amp; BR() &amp;  TEXT(BrCEP__c)</formula>
+    <inlineHelpText>Para alterar o endereço, clique em CONSULTAR CEP</inlineHelpText>
+    <label>Endereço Brasileiro</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

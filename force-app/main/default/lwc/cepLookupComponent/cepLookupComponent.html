@@ -1,0 +1,34 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-quick-action-panel header="Consulta CEP">
+
+        <lightning-layout vertical-align="end" class="slds-var-m-bottom_small">
+            <lightning-layout-item flexibility="grow">
+                <lightning-input type="search" label="CEP" value={lookupCep} onchange={handleLookupCepChange}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item class="slds-var-p-left_xx-small">
+                <lightning-button label="Consultar" onclick={handleSearch}></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+  
+        <template if:true={showForm}>
+            <lightning-record-edit-form onerror={handleError} onsuccess={handleSuccess} record-id={recordId} object-api-name={objectApiName}>
+                <lightning-input-field field-name="BrCEP__c" value={address.cep}></lightning-input-field>
+                <lightning-input-field field-name="BrLogradouro__c" value={address.logradouro}></lightning-input-field>
+                <lightning-input-field field-name="BrNumero__c" value={address.numero}></lightning-input-field>
+                <lightning-input-field field-name="BrComplemento__c" value={address.complemento}></lightning-input-field>
+                <lightning-input-field field-name="BrLocalidade__c" value={address.localidade}></lightning-input-field>
+                <lightning-input-field field-name="BrBairro__c" value={address.bairro}></lightning-input-field>
+                <lightning-input-field field-name="BrUF__c" value={address.uf}></lightning-input-field>
+                <lightning-input-field field-name="BrIBGE__c" value={address.ibge}></lightning-input-field>
+                <lightning-button variant="brand" class="slds-m-left_x-small" label="Salvar" type="submit"></lightning-button>
+            </lightning-record-edit-form>
+        </template>
+
+        <template if:true={showError}>
+            <h1 style="color: red">{errorMessage}</h1>
+        </template>
+  
+    </lightning-quick-action-panel>
+    
+</template>
